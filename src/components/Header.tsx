@@ -3,7 +3,7 @@ import "@styles/components/Header.scss"
 const Header = () => {
   return (
     <header>
-      Header
+      <p><span id="span_title">MOVIE</span>IN</p>
     </header>
   )
 }

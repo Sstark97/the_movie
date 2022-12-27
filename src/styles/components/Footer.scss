@@ -1,4 +1,8 @@
+@import "@styles/var.scss";
+
 footer {
     height: 15%;
-    background: red;
+
+    background: $primary;
+    color: #fff;
 }
