@@ -3,6 +3,7 @@ import Layout from "@containers/Layout"
 import type { Movie, Response } from "@customTypes/movies"
 import { API_MOST_POPULAR } from "./const"
 import "@styles/App.scss"
+import MovieList from "@containers/MovieList"
 
 const App = () => {
   const [data, setData] = useState<Movie[]>([])
@@ -20,7 +21,7 @@ const App = () => {
 
   return (
     <Layout>
-      {data.map((e: Movie) => <div key={e.id}>{e.original_title}</div>)}
+      {data ? <MovieList movies={data}/> : null}
     </Layout>
   )
 }
