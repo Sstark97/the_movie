@@ -1,6 +1,8 @@
+import "@styles/components/Footer.scss"
+
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <footer>Footer</footer>
   )
 }
 

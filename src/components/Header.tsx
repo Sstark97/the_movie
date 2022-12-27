@@ -1,6 +1,10 @@
+import "@styles/components/Header.scss"
+
 const Header = () => {
   return (
-    <div>Header</div>
+    <header>
+      Header
+    </header>
   )
 }
 
