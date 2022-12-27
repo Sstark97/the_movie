@@ -1,0 +1,19 @@
+@import "@styles/var.scss";
+
+header {
+    display: flex;
+    align-items: center;
+    height: 10%;
+
+    font-weight: 600;
+    font-size: 1.5rem;
+
+    background: $primary;
+    color: #fff;
+
+    padding: 1rem 2rem 1rem 2rem;
+}
+
+#span_title {
+    color: $secondary;
+}
