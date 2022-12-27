@@ -1,0 +1,16 @@
+@import './var.scss';
+
+/**
+ * @mixin md
+ * @param {string} breakpoint
+ * @return {string}
+ */
+@mixin md ($breakpoint) {
+    @each $breakpoints, $size in $media {
+        @if $breakpoint == $breakpoints {
+            @media screen and (min-width: $size) {
+                @content;
+            }
+        }
+    }
+}
