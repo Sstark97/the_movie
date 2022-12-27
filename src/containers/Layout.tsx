@@ -6,11 +6,9 @@ import "@styles/containers/Layout.scss"
 const Layout = ({ children }: Children) => {
   return (
     <div className="app_container">
-        <Header/>
-        <main>
-            { children }
-        </main>
-        <Footer />
+      <Header />
+      <main>{children}</main>
+      <Footer />
     </div>
   )
 }
