@@ -1,9 +1,10 @@
-li {
+li { 
+    width: 20%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-    width: 20%;
+
+    padding-bottom: 1rem;
 }
 
 li img {
@@ -14,7 +15,11 @@ li img {
 }
 
 .movie_info {
+    width: 9.375rem;
+    display: flex;
+    flex-direction: column;
     padding-top: .5rem;
+    margin-left: .5rem;
 }
 
 .movie_info p:nth-child(2) {
