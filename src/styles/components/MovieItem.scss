@@ -1,0 +1,14 @@
+li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    width: 20%;
+}
+
+li img {
+    width: 9.375rem;
+    height: 14.063rem;
+    border-radius: .5rem;
+    object-fit: cover;
+}

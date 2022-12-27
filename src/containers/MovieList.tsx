@@ -1,5 +1,6 @@
 import MovieItem from "@components/MovieItem"
 import { Movie } from "@customTypes/movies"
+import "@styles/containers/MovieList.scss"
 
 const MovieList = ({ movies }: {movies: Movie[]}) => {
   return (

@@ -1,0 +1,11 @@
+ul {
+    list-style: none;
+
+    width: 75%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    margin: 0 auto;
+    padding-bottom: 1.5rem;
+}

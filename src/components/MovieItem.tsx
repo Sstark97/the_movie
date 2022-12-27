@@ -1,5 +1,6 @@
 import type { Movie } from "@customTypes/movies"
 import { IMG_URI } from "../const"
+import "@styles/components/MovieItem.scss"
 
 const MovieItem = ({ movie }: {movie: Movie}) => {
   return (

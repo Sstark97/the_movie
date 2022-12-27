@@ -21,6 +21,7 @@ const App = () => {
 
   return (
     <Layout>
+      <h1>Most Popular Movies</h1>
       {data ? <MovieList movies={data}/> : null}
     </Layout>
   )
