@@ -1,14 +1,12 @@
-import { useState } from 'react'
-import Test from '@components/Test'
+import Layout from '@containers/Layout'
 import '@styles/App.scss'
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
 
   return (
-    <div className="App">
-      <Test />
-    </div>
+    <Layout>
+      <p>Hola</p>
+    </Layout>
   )
 }
 

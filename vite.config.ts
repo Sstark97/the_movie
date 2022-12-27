@@ -8,6 +8,7 @@ const getAlliases = () => {
     '@components': resolve('src/components'),
     '@containers': resolve('src/containers'),
     '@styles': resolve('src/styles'),
+    "@customTypes": resolve('src/types')
   }
 }
 
@@ -36,7 +37,7 @@ export default defineConfig(({ command, mode }) => {
         minify: 'esbuild',
       },
       resolve: {
-        alias: getAlliases(),
+        alias: getAlliases()
       },
     }
   }
