@@ -8,13 +8,15 @@ const MovieItem = ({ movie }: { movie: Movie }) => {
 
   // Format Date with moment.js and in English Format
   const formatDate = moment(release_date).format("ll")
+  const popularityPercent = popularity >= 5000 ? 5 : (popularity * 5 / 5000).toFixed(2)
+
   return (
     <li>
       <img src={`${IMG_URI}${poster_path}`} alt="poster" />
       <div className="movie_info">
         <h3>{original_title}</h3>
         <p>{formatDate}</p>
-        <p>{popularity}</p>
+        <p>{popularityPercent}</p>
       </div>
     </li>
   )
