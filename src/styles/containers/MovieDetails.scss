@@ -1,0 +1,62 @@
+@import '@styles/var.scss';
+@import "@styles/mixins.scss";
+
+.movie_details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1.5rem 2.2rem 1.5rem 2.2rem;
+
+    img {
+        border-radius: .5rem;
+        object-fit: cover;
+    }
+
+    h2 {
+        width: 100%;
+        margin-top: .8rem;
+        font-size: 1.4rem;
+
+        text-align: start;
+    }
+
+    p {
+        max-width: 65ch;
+        font-size: .9rem;
+    }
+}
+
+.info_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.info_container:nth-child(4) {
+    padding-top: .4rem;
+}
+
+.info_container:nth-child(5){
+    padding: .4rem 0 .4rem 0;
+}
+
+.info_container:has(.stars) {
+    flex-direction: row;
+    align-items: center;
+    align-self: flex-start;
+
+    .stars {
+        width: 35%;
+
+        span {
+            font-size: 1.5rem;
+        }
+    }
+    
+    p {
+        padding-top: .3rem;
+        margin-left: .5rem;
+    }
+}
