@@ -5,6 +5,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100vw;
     height: 10%;
     padding: 2rem;
 
@@ -22,6 +23,15 @@ footer {
         p {
             font-size: 1rem;
         }
+    }
+}
+
+@include md (desktop) {
+    footer {
+        position: absolute;
+        bottom: 0;
+
+        overflow: hidden;
     }
 }
 

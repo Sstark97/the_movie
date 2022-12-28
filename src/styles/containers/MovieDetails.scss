@@ -9,10 +9,23 @@
 
     padding: 1.5rem 2.2rem 1.5rem 2.2rem;
 
-    img {
-        border-radius: .5rem;
-        object-fit: cover;
+    figure {
+        display: flex;
+        width: 65%;
+
+        img {
+            width: 100%;
+            border-radius: .5rem;
+            object-fit: cover;
+        }
     }
+}
+
+.several_info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     h2 {
         width: 100%;
@@ -23,7 +36,6 @@
     }
 
     p {
-        max-width: 65ch;
         font-size: .9rem;
     }
 }
@@ -35,7 +47,7 @@
 }
 
 .info_container:nth-child(4) {
-    padding-top: .4rem;
+    padding-top: .7rem;
 }
 
 .info_container:nth-child(5){
@@ -48,7 +60,7 @@
     align-self: flex-start;
 
     .stars {
-        width: 35%;
+        width: 38%;
 
         span {
             font-size: 1.5rem;
@@ -58,5 +70,88 @@
     p {
         padding-top: .3rem;
         margin-left: .5rem;
+    }
+}
+
+#description {
+    width: 100%;
+    max-width: 65ch;
+    align-self: flex-start;
+
+    font-size: 1rem;
+}
+
+@include md (tablet) {
+    .movie_details {
+        figure {
+            width: 50%;
+        }
+    }
+
+    .several_info {
+
+        h2 {
+            font-size: 1.397rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+        }
+    }
+}
+
+@include md (desktop) {
+
+    .movie_details {
+        height: 70vh;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        margin-top: 2rem;
+
+        figure {
+            width: 30%;
+            height: 100%;
+
+            img {
+                width: auto;
+            }
+        }
+    }
+
+    .several_info {
+        width: 65%;
+        height: 100%;
+        align-self: flex-start;
+
+        padding-top: 1rem;
+
+        h2 {
+            font-size: 1.22rem;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+
+        .info_container:has(.stars) {
+            .stars {
+                width: 15%;
+            }
+        }
+
+    }
+
+    #description {
+        padding: 3rem 0 2rem 0;
+    }
+}
+
+@include md (large) {
+    .movie_details {
+        figure {
+            width: 25%;
+        }
     }
 }

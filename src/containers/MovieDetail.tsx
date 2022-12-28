@@ -14,25 +14,29 @@ const MovieDetail = ({ searchTitle }: { searchTitle: string }) => {
   const year = moment(release_date).format("Y")
   // Format popularity in base to 5 stars like the most
   const popularityPercent = popularity >= 5000 ? 5 : parseFloat(((popularity * 5) / 5000).toFixed(1))
-  
+
   return (
     <div className="movie_details">
-      <img src={`${IMG_URI}${poster_path}`} alt={title} />
-      <h2>{`${title} (${year})`}</h2>
-      <div className="info_container">
-        <Stars stars={Math.round(popularityPercent)} />
-        <p>{formatDate}</p>
+      <figure>
+        <img src={`${IMG_URI}${poster_path}`} alt={title} />
+      </figure>
+      <div className="several_info">
+        <h2>{`${title} (${year})`}</h2>
+        <div className="info_container">
+          <Stars stars={Math.round(popularityPercent)} />
+          <p>{formatDate}</p>
+        </div>
+        <div className="info_container">
+          <p>Original Title: {original_title}</p>
+          <p>Language: {original_language}</p>
+          <p></p>
+        </div>
+        <div className="info_container">
+          <p>Vote Average: {vote_average}</p>
+          <p>Total Votes: {vote_count}</p>
+        </div>
+        <p id="description">{overview}</p>
       </div>
-      <div className="info_container">
-        <p>Original Title: {original_title}</p>
-        <p>Language: {original_language}</p>
-        <p></p>
-      </div>
-      <div className="info_container">
-        <p>Vote Average: {vote_average}</p>
-        <p>Total Votes: {vote_count}</p>
-      </div>
-      <p>{overview}</p>
     </div>
   )
 }
