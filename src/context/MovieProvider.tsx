@@ -7,13 +7,10 @@ const MovieContext = createContext<AppContextInterface>({} as AppContextInterfac
 
 const MovieProvider = ({ children }: Children) => {
   const { Provider } = MovieContext
-  const { movies, loading, error} = useProvideMovies()
-
-  console.log(movies)
-
+  const { movies, page, loading, error} = useProvideMovies()
 
   return (
-    <Provider value={{ movies, loading, error }}>{children}</Provider>
+    <Provider value={{ movies, page, loading, error }}>{children}</Provider>
   )
 }
 
