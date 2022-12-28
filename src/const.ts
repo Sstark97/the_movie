@@ -2,12 +2,12 @@ import { lazy } from "react"
 import { Routes } from "@customTypes/routes"
 
 const Home = lazy(() => import("@pages/Home"))
-// const Movie = lazy(() => import("@pages/Movie"));
+const Movie = lazy(() => import("@pages/Movie"))
 // const NotFound = lazy(() => import("@pages/NotFound"));
 
 const ROUTER: Routes[] = [
   { route: "/", element: Home },
-  // { route: "/details", element: Movie },
+  { route: "/movie", element: Movie },
   // { route: "*", element: NotFound },
 ]
 
