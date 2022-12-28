@@ -4,6 +4,7 @@ import type { FailResponse, Response, Movie } from "@customTypes/movies"
 
 const useProvideMovies = () => {
     const [movies, setMovies] = useState<Movie[]>([] as Movie[])
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [page, setPage] = useState(1)
     const [loading, setLoading] = useState<boolean>(false)
     const [error, setError] = useState<string>("")
