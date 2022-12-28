@@ -12,8 +12,10 @@
     opacity: .8;
     transition: all .3s;
 
-    color: #fff;
-    text-decoration: none;
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
 
     img {
         width: 100%;
