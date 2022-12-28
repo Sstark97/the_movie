@@ -4,7 +4,7 @@ interface AppContextInterface {
     movies: Movie[],
     page: number,
     loading: boolean, 
-    error: boolean
+    error: string
 }
 
 export type {

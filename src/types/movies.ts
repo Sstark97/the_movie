@@ -22,7 +22,14 @@ interface Response {
     total_results: number;
 }
 
+interface FailResponse {
+    status_code: number;
+    status_message: string;
+    success: boolean;
+}
+
 export type {
     Movie,
-    Response
+    Response,
+    FailResponse
 }
