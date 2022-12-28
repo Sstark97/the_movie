@@ -1,21 +1,23 @@
+@import '@styles/var.scss';
+@import "@styles/mixins.scss";
+
 li { 
-    width: 20%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
 
     padding-bottom: 1rem;
-}
 
-li img {
-    width: 9.375rem;
-    height: 14.063rem;
-    border-radius: .5rem;
-    object-fit: cover;
+    img {
+        width: 100%;
+        border-radius: .5rem;
+        object-fit: cover;
+    }
 }
 
 .movie_info {
-    width: 9.375rem;
+    width: 100%;
     display: flex;
     flex-direction: column;
     padding-top: .5rem;
@@ -29,4 +31,19 @@ li img {
 .movie_info h3 {
     font-size: 1rem;
     max-width: 14ch;
+}
+
+@include md (desktop) {
+    li {
+        width: 20%;
+
+        img {
+            width: 9.375rem;
+            height: 14.063rem;
+        }
+    }
+
+    .movie_info {
+        width: 9.375rem;
+    }
 }
