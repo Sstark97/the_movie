@@ -1,11 +1,27 @@
 @import "@styles/var.scss";
+@import "@styles/mixins.scss";
 
 footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 15%;
+    height: 10%;
+    padding: 2rem;
 
     background: $primary;
     color: #fff;
+    font-size: .9rem;
+
+    p {
+        text-align: center;
+    }
 }
+
+@include md (tablet) {
+    footer {
+        p {
+            font-size: 1rem;
+        }
+    }
+}
+

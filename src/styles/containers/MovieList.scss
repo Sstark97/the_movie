@@ -1,0 +1,44 @@
+@import '@styles/var.scss';
+@import "@styles/mixins.scss";
+
+h1 {
+    text-align: center;
+    padding: 2rem;
+}
+
+ul {
+    list-style: none;
+
+    width: 75%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    margin: 0 auto;
+    padding: 1.5rem 0 1.5rem 0;
+}
+
+.not_movies {
+    height: 52.3vh;
+    align-items: flex-start;
+    margin-top: 7rem;
+}
+
+@include md (tablet) {
+    ul {
+        width: 70%;
+    }
+}
+
+@include md (desktop) {
+    ul {
+        width: 85%;
+    }
+}
+
+@include md (large) {
+    ul {
+        width: 75%;
+    }
+}
