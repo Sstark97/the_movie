@@ -1,4 +1,5 @@
 @import "@styles/var.scss";
+@import "@styles/mixins.scss";
 
 footer {
     display: flex;
@@ -9,4 +10,18 @@ footer {
 
     background: $primary;
     color: #fff;
+    font-size: .9rem;
+
+    p {
+        text-align: center;
+    }
 }
+
+@include md (tablet) {
+    footer {
+        p {
+            font-size: 1rem;
+        }
+    }
+}
+
