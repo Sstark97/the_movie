@@ -10,6 +10,8 @@ const getAlliases = () => {
     "@containers": resolve("src/containers"),
     "@context": resolve("src/context"),
     "@hooks": resolve("src/hooks"),
+    "@pages": resolve("src/pages"),
+    "routes": resolve("src/routes"),
     "@styles": resolve("src/styles"),
     "@customTypes": resolve("src/types"),
   }
