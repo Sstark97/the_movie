@@ -36,6 +36,8 @@ const useProvideMovies = () => {
 
             // Check if API fail
             comprobeMoviesError(data)
+
+            console.log(currentMovies)
             
             setMovies(currentMovies)
             setError("")
