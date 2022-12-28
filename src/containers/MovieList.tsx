@@ -7,14 +7,16 @@ import { Movie } from "@customTypes/movies"
 import "@styles/containers/MovieList.scss"
 
 const MovieList = () => {
-  const { movies, loading, error}: AppContextInterface = useMovies()
-  console.log(error)
-  
+  const { movies, loading, error }: AppContextInterface = useMovies()
+
   return (
-    <ul className={loading ? "loading" : ""}>
+    <>
+      {!error ? <h1>Most Popular Movies</h1> : null}
+      <ul className={loading || error ? "not_movies" : ""}>
         {error ? <Error /> : null}
-        {!loading ? movies.map((movie: Movie) => <MovieItem key={movie.id} movie={movie} /> ) : <Loading />}
-    </ul>
+        {!loading ? movies.map((movie: Movie) => <MovieItem key={movie.id} movie={movie} />) : <Loading />}
+      </ul>
+    </>
   )
 }
 

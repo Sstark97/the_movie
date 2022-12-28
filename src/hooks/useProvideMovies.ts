@@ -30,10 +30,7 @@ const useProvideMovies = () => {
         setLoading(true)
 
         try {
-            // ${API_MOST_POPULAR}&page=${page}
-            "https://api.themoviedb.org/3/movie/popular?api_key=<<api_key>>&language=en-US&page=1"
-            // ${API_MOST_POPULAR}&page=${page}
-            const response = await fetch("https://api.themoviedb.org/3/movie/popular?api_key=<<api_key>>&language=en-US&page=1")
+            const response = await fetch(`${API_MOST_POPULAR}&page=${page}`)
             const data: Response | FailResponse= await response.json()
             const { results: currentMovies } = data as Response
 
@@ -42,7 +39,7 @@ const useProvideMovies = () => {
             
             setMovies(currentMovies)
             setError("")
-        } catch (e: any) {
+        } catch (e: unknown) {
             setError(`${e}`)
         } finally {
             setLoading(false)

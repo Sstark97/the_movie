@@ -1,12 +1,11 @@
 import Layout from "@containers/Layout"
-import "@styles/App.scss"
 import MovieList from "@containers/MovieList"
+import "@styles/App.scss"
 
 const App = () => {
 
   return (
     <Layout>
-      <h1>Most Popular Movies</h1>
       <MovieList />
     </Layout>
   )

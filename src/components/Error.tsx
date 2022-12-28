@@ -6,8 +6,9 @@ const Error = () => {
   const { error }: AppContextInterface = useMovies()
   
   return (
-    <div>
-        {error}
+    <div className="error">
+        <h2>Something gone wrong!</h2>
+        <p>{error}</p>
     </div>
   )
 }
