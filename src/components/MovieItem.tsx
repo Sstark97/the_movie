@@ -15,22 +15,21 @@ const MovieItem = ({ movie }: { movie: Movie }) => {
   const popularityPercent = popularity >= 5000 ? 5 : parseFloat(((popularity * 5) / 5000).toFixed(1))
 
   return (
-    <Link
-      className="movie_item"
-      to={{
-        pathname: "/movie",
-        search: `?title=${original_title}`,
-      }}
-    >
-      <li>
+    <li className="movie_item">
+      <Link
+        to={{
+          pathname: "/movie",
+          search: `?title=${original_title}`,
+        }}
+      >
         <img src={`${IMG_URI}${poster_path}`} alt="poster" />
         <div className="movie_info">
           <Stars stars={Math.round(popularityPercent)} />
           <h3>{original_title}</h3>
           <p>{formatDate}</p>
         </div>
-      </li>
-    </Link>
+      </Link>
+    </li>
   )
 }
 
