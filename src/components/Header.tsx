@@ -1,11 +1,12 @@
+import { Link } from "react-router-dom"
 import "@styles/components/Header.scss"
 
 const Header = () => {
   return (
     <header>
-      <p>
+      <Link to="/">
         <span id="span_title">MOVIE</span>IN
-      </p>
+      </Link>
     </header>
   )
 }
