@@ -98,6 +98,12 @@
             font-size: 1.1rem;
         }
     }
+
+    .info_container:has(.stars) {
+        .stars {
+            width: 18%;
+        }
+    }
 }
 
 @include md (desktop) {
@@ -108,7 +114,7 @@
         flex-wrap: wrap;
         justify-content: space-between;
 
-        margin-top: 2rem;
+        margin: 2rem 0 2.5rem 0;
 
         figure {
             width: 30%;
@@ -134,24 +140,43 @@
         p {
             font-size: 1rem;
         }
+    }
 
-        .info_container:has(.stars) {
-            .stars {
-                width: 15%;
-            }
+    .info_container:has(.stars) {
+        .stars {
+            width: 25%;
         }
-
     }
 
     #description {
         padding: 3rem 0 2rem 0;
     }
+
 }
 
 @include md (large) {
     .movie_details {
+        padding: 0;
+        justify-content: center;
+
         figure {
-            width: 25%;
+            width: 30%;
         }
+
+        .several_info {
+            width: 50%;
+
+            p {
+                font-size: 1.15rem;
+            }
+        }
+    }
+
+    .info_container:nth-child(3) {
+        padding-top: 2rem;
+    }
+
+    #description {
+        font-size: 1.2rem;
     }
 }

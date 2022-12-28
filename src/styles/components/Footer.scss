@@ -25,13 +25,3 @@ footer {
         }
     }
 }
-
-@include md (desktop) {
-    footer {
-        position: absolute;
-        bottom: 0;
-
-        overflow: hidden;
-    }
-}
-
