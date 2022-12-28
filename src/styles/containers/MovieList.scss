@@ -1,3 +1,6 @@
+@import '@styles/var.scss';
+@import "@styles/mixins.scss";
+
 ul {
     list-style: none;
 
@@ -8,4 +11,22 @@ ul {
 
     margin: 0 auto;
     padding-bottom: 1.5rem;
+}
+
+@include md (tablet) {
+    ul {
+        width: 70%;
+    }
+}
+
+@include md (desktop) {
+    ul {
+        width: 85%;
+    }
+}
+
+@include md (large) {
+    ul {
+        width: 75%;
+    }
 }

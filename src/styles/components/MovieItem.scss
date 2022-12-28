@@ -33,7 +33,19 @@ li {
     max-width: 14ch;
 }
 
+@include md (tablet) {
+    li {
+        width: 35%;
+    }
+}
+
 @include md (desktop) {
+    li {
+        width: 18%;
+    }
+}
+
+@include md (large) {
     li {
         width: 20%;
 
