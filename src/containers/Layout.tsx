@@ -4,6 +4,7 @@ import Footer from "@components/Footer"
 import type { Children } from "@customTypes/globals"
 import "@styles/containers/Layout.scss"
 
+// Main Layout of the App
 const Layout = ({ children }: Children) => {
   return (
     <MovieProvider>

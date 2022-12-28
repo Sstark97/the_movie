@@ -1,6 +1,11 @@
 @import '@styles/var.scss';
 @import "@styles/mixins.scss";
 
+h1 {
+    text-align: center;
+    padding: 2rem;
+}
+
 ul {
     list-style: none;
 
