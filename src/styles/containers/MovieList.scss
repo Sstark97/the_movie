@@ -5,12 +5,19 @@ ul {
     list-style: none;
 
     width: 75%;
+    height: 100%;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
 
     margin: 0 auto;
     padding-bottom: 1.5rem;
+}
+
+.loading {
+    height: 52.3vh;
+    align-items: flex-start;
+    margin-top: 7rem;
 }
 
 @include md (tablet) {

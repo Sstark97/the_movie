@@ -17,10 +17,11 @@ const useProvideMovies = () => {
             const { results: currentMovies } = data
             
             setMovies(currentMovies)
-            setLoading(false)
             setError(false)
         } catch {
             setError(true)
+        } finally {
+            setLoading(false)
         }
     }, [])
 
