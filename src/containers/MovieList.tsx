@@ -1,9 +1,9 @@
-import useMovies from "@hooks/useMovies"
-import type { AppContextInterface } from "@customTypes/context"
 import Loading from "@components/Loading"
 import Error from "@components/Error"
 import MovieItem from "@components/MovieItem"
-import { Movie } from "@customTypes/movies"
+import useMovies from "@hooks/useMovies"
+import type { AppContextInterface } from "@customTypes/context"
+import type { Movie } from "@customTypes/movies"
 import "@styles/containers/MovieList.scss"
 
 const MovieList = () => {

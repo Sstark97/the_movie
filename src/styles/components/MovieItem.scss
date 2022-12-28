@@ -1,7 +1,7 @@
 @import '@styles/var.scss';
 @import "@styles/mixins.scss";
 
-a { 
+.movie_item { 
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -22,7 +22,7 @@ a {
     }
 }
 
-a:hover {
+.movie_item:hover {
     cursor: pointer;
     opacity: 1;
     transform: scale(1.1);
@@ -46,19 +46,19 @@ a:hover {
 }
 
 @include md (tablet) {
-    a {
+    .movie_item {
         width: 35%;
     }
 }
 
 @include md (desktop) {
-    a {
+    .movie_item {
         width: 18%;
     }
 }
 
 @include md (large) {
-    a {
+    .movie_item {
         width: 20%;
 
         img {

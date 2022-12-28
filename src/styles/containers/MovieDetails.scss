@@ -1,0 +1,182 @@
+@import '@styles/var.scss';
+@import "@styles/mixins.scss";
+
+.movie_details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1.5rem 2.2rem 1.5rem 2.2rem;
+
+    figure {
+        display: flex;
+        width: 65%;
+
+        img {
+            width: 100%;
+            border-radius: .5rem;
+            object-fit: cover;
+        }
+    }
+}
+
+.several_info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+        width: 100%;
+        margin-top: .8rem;
+        font-size: 1.4rem;
+
+        text-align: start;
+    }
+
+    p {
+        font-size: .9rem;
+    }
+}
+
+.info_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.info_container:nth-child(4) {
+    padding-top: .7rem;
+}
+
+.info_container:nth-child(5){
+    padding: .4rem 0 .4rem 0;
+}
+
+.info_container:has(.stars) {
+    flex-direction: row;
+    align-items: center;
+    align-self: flex-start;
+
+    .stars {
+        width: 38%;
+
+        span {
+            font-size: 1.5rem;
+        }
+    }
+    
+    p {
+        padding-top: .3rem;
+        margin-left: .5rem;
+    }
+}
+
+#description {
+    width: 100%;
+    max-width: 65ch;
+    align-self: flex-start;
+
+    font-size: 1rem;
+}
+
+@include md (tablet) {
+    .movie_details {
+        figure {
+            width: 50%;
+        }
+    }
+
+    .several_info {
+
+        h2 {
+            font-size: 1.397rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+        }
+    }
+
+    .info_container:has(.stars) {
+        .stars {
+            width: 18%;
+        }
+    }
+}
+
+@include md (desktop) {
+
+    .movie_details {
+        height: 70vh;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        margin: 2rem 0 2.5rem 0;
+
+        figure {
+            width: 30%;
+            height: 100%;
+
+            img {
+                width: auto;
+            }
+        }
+    }
+
+    .several_info {
+        width: 65%;
+        height: 100%;
+        align-self: flex-start;
+
+        padding-top: 1rem;
+
+        h2 {
+            font-size: 1.22rem;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+    }
+
+    .info_container:has(.stars) {
+        .stars {
+            width: 25%;
+        }
+    }
+
+    #description {
+        padding: 3rem 0 2rem 0;
+    }
+
+}
+
+@include md (large) {
+    .movie_details {
+        padding: 0;
+        justify-content: center;
+
+        figure {
+            width: 30%;
+        }
+
+        .several_info {
+            width: 50%;
+
+            p {
+                font-size: 1.15rem;
+            }
+        }
+    }
+
+    .info_container:nth-child(3) {
+        padding-top: 2rem;
+    }
+
+    #description {
+        font-size: 1.2rem;
+    }
+}

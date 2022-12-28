@@ -16,6 +16,7 @@ const MovieItem = ({ movie }: { movie: Movie }) => {
 
   return (
     <Link
+      className="movie_item"
       to={{
         pathname: "/movie",
         search: `?title=${original_title}`,
