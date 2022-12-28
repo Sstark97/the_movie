@@ -1,14 +1,23 @@
 import { lazy } from "react"
 import { Routes } from "@customTypes/routes"
 
+/**
+ * These dynamics imports implement lazy load
+ * and incresea the performance of the App
+ */
 const Home = lazy(() => import("@pages/Home"))
 const Movie = lazy(() => import("@pages/Movie"))
-// const NotFound = lazy(() => import("@pages/NotFound"));
+const NotFound = lazy(() => import("@pages/NotFound"));
 
+/**
+ * These way to define the router give the posibility
+ * to change the Route in one side and have a clean code
+ * in the Router Component
+ */
 const ROUTER: Routes[] = [
   { route: "/", element: Home },
   { route: "/movie", element: Movie },
-  // { route: "*", element: NotFound },
+  { route: "*", element: NotFound },
 ]
 
 // Complete endPoint of API with api key
