@@ -1,5 +1,5 @@
 import MovieList from "@containers/MovieList"
-import Pagination from "@components/Pagination"
+import Pagination from "@containers/Pagination"
 
 const Home = () => (
     <>
