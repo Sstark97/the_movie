@@ -1,5 +1,11 @@
 import MovieList from "@containers/MovieList"
+import PaginationList from "@containers/PaginationList"
 
-const Home = () => (<MovieList />)
+const Home = () => (
+    <>
+        <MovieList />
+        <PaginationList />
+    </>
+)
 
 export default Home

@@ -6,7 +6,7 @@ import { IMG_URI } from "../const"
 import "@styles/components/MovieItem.scss"
 
 const MovieItem = ({ movie }: { movie: Movie }) => {
-  const { poster_path, original_title, release_date, popularity } = movie
+  const { poster_path, title, release_date, popularity } = movie
 
   // Format Date with moment.js and in English Format
   const formatDate = moment(release_date).format("ll")
@@ -19,13 +19,13 @@ const MovieItem = ({ movie }: { movie: Movie }) => {
       <Link
         to={{
           pathname: "/movie",
-          search: `?title=${original_title}`,
+          search: `?title=${title}`,
         }}
       >
         <img src={`${IMG_URI}${poster_path}`} alt="poster" />
         <div className="movie_info">
           <Stars stars={Math.round(popularityPercent)} />
-          <h3>{original_title}</h3>
+          <h3>{title}</h3>
           <p>{formatDate}</p>
         </div>
       </Link>

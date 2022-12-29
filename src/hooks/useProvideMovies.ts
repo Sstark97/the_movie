@@ -1,10 +1,9 @@
 import { useState, useCallback, useEffect } from "react"
-import { API_MOST_POPULAR } from "../const"
+import { API_MOST_POPULAR, TOTAL_PAGES } from "../const"
 import type { FailResponse, Response, Movie } from "@customTypes/movies"
 
 const useProvideMovies = () => {
     const [movies, setMovies] = useState<Movie[]>([] as Movie[])
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [page, setPage] = useState(1)
     const [loading, setLoading] = useState<boolean>(false)
     const [error, setError] = useState<string>("")
@@ -27,18 +26,16 @@ const useProvideMovies = () => {
      * Function that load Movies from the API
      * and Check if the API throw an Error
      */
-    const loadMovies = useCallback(async () => {
+    const loadMovies = useCallback(async (newPage: number) => {
         setLoading(true)
 
         try {
-            const response = await fetch(`${API_MOST_POPULAR}&page=${page}`)
+            const response = await fetch(`${API_MOST_POPULAR}&page=${newPage}`)
             const data: Response | FailResponse= await response.json()
             const { results: currentMovies } = data as Response
 
             // Check if API fail
             comprobeMoviesError(data)
-
-            console.log(currentMovies)
             
             setMovies(currentMovies)
             setError("")
@@ -49,13 +46,19 @@ const useProvideMovies = () => {
         }
     }, [])
 
+    const handleChangePage = (newPage: number) => {
+        setPage(newPage)
+    }
+
     useEffect(() => {
-        loadMovies()
+        loadMovies(page)
     }, [page])
 
     return {
         movies,
         page,
+        totalPages: TOTAL_PAGES,
+        handleChangePage,
         loading, 
         error
     }
