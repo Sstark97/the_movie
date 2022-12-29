@@ -4,6 +4,7 @@ interface AppContextInterface {
     movies: Movie[],
     page: number,
     totalPages: number,
+    handleChangePage(newPage: number): void,
     loading: boolean, 
     error: string
 }
