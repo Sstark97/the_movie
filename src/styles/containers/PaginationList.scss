@@ -51,3 +51,17 @@
         box-sizing: border-box;
     }
 }
+
+@include md (desktop) {
+    .pagination {
+        width: 70%;
+
+        padding-top: .5rem;
+    }
+}
+
+@include md (large) {
+    .pagination {
+        width: 50%;
+    }
+}

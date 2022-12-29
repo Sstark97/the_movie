@@ -8,7 +8,7 @@ import "@styles/containers/MovieDetails.scss"
 
 const MovieDetail = ({ searchTitle }: { searchTitle: string }) => {
   const { movies }: AppContextInterface = useMovies()
-  const movie: Movie = movies.find((currentMovie) => currentMovie.original_title === searchTitle) as Movie
+  const movie: Movie = movies.find((currentMovie) => currentMovie.title === searchTitle) as Movie
   const { poster_path, title, original_title, original_language, release_date, overview, popularity, vote_average, vote_count } = movie
   const formatDate = moment(release_date).format("D/MM/Y")
   const year = moment(release_date).format("Y")
