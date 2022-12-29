@@ -6,6 +6,7 @@ const useProvideMovies = () => {
     const [movies, setMovies] = useState<Movie[]>([] as Movie[])
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [page, setPage] = useState(1)
+    const [totalPages, setTotalPages] = useState(0)
     const [loading, setLoading] = useState<boolean>(false)
     const [error, setError] = useState<string>("")
 
@@ -33,14 +34,15 @@ const useProvideMovies = () => {
         try {
             const response = await fetch(`${API_MOST_POPULAR}&page=${page}`)
             const data: Response | FailResponse= await response.json()
-            const { results: currentMovies } = data as Response
+            const { results: currentMovies, total_pages } = data as Response
 
             // Check if API fail
             comprobeMoviesError(data)
 
-            console.log(currentMovies)
+            console.log(data)
             
             setMovies(currentMovies)
+            setTotalPages(totalPages)
             setError("")
         } catch (e: unknown) {
             setError(`${e}`)
@@ -56,6 +58,7 @@ const useProvideMovies = () => {
     return {
         movies,
         page,
+        totalPages,
         loading, 
         error
     }
