@@ -5,7 +5,6 @@ import type { FailResponse, Response, Movie } from "@customTypes/movies"
 const useProvideMovies = () => {
     const [movies, setMovies] = useState<Movie[]>([] as Movie[])
     const [page, setPage] = useState(1)
-    const [totalPages, setTotalPages] = useState(0)
     const [loading, setLoading] = useState<boolean>(false)
     const [error, setError] = useState<string>("")
 
@@ -33,7 +32,7 @@ const useProvideMovies = () => {
         try {
             const response = await fetch(`${API_MOST_POPULAR}&page=${newPage}`)
             const data: Response | FailResponse= await response.json()
-            const { results: currentMovies, total_pages } = data as Response
+            const { results: currentMovies } = data as Response
 
             // Check if API fail
             comprobeMoviesError(data)
@@ -41,7 +40,6 @@ const useProvideMovies = () => {
             console.log(data)
             
             setMovies(currentMovies)
-            setTotalPages(total_pages)
             setError("")
         } catch (e: unknown) {
             setError(`${e}`)
@@ -61,7 +59,7 @@ const useProvideMovies = () => {
     return {
         movies,
         page,
-        totalPages,
+        totalPages: 500,
         handleChangePage,
         loading, 
         error
