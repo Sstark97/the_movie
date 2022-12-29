@@ -8,7 +8,7 @@ const NextPage = () => {
 
   return (
     <li>
-      <button disabled={page === totalPages} onClick={handleChangeNextPage}>
+      <button className="not_number_btn" disabled={page === totalPages} onClick={handleChangeNextPage}>
         {">"}
       </button>
     </li>

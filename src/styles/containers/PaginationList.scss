@@ -1,0 +1,40 @@
+@import '@styles/var.scss';
+@import "@styles/mixins.scss";
+
+.pagination{
+    display: flex;
+    align-items: center;
+    width: 87%;
+    
+    button {
+        background: transparent;
+        border: none;
+
+        font-size: .875rem;
+        color: $secondary;
+        opacity: .8;
+
+        min-width: 32px;
+        height: 32px;
+        padding: 0px 6px;
+        margin: 0px 3px;
+    }
+
+    .not_number_btn {
+        font-weight: bold;
+        opacity: 1;
+    }
+
+    .not_number_btn:disabled {
+        opacity: .3;
+    }
+
+    .selected {
+        background: $secondary;
+        color: $primary;
+
+        border-radius: 16px;
+        text-align: center;
+        box-sizing: border-box;
+    }
+}
