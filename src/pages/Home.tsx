@@ -1,10 +1,10 @@
 import MovieList from "@containers/MovieList"
-import Pagination from "@containers/Pagination"
+import PaginationList from "@containers/PaginationList"
 
 const Home = () => (
     <>
         <MovieList />
-        <Pagination />
+        <PaginationList />
     </>
 )
 
