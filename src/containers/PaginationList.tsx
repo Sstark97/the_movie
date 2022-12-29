@@ -8,6 +8,7 @@ import "@styles/containers/PaginationList.scss"
 const Pagination = () => {
   const { nearPages } = usePagination()
 
+  // I use  uuidv4 for get unique jeys to PageItem
   return (
     <ul className="pagination">
       <PreviousPage />

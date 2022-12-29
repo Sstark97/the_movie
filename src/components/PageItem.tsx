@@ -5,7 +5,9 @@ import type { AppContextInterface } from "@customTypes/context"
 const PageItem = ({ numberPage }: { numberPage: string | number }) => {
   const { page }: AppContextInterface = useMovies()
   const { handleChangeNumberPage } = usePagination()
-  const selectedClassName = page === numberPage ? "selected" : "" 
+
+  // Add these classes for selected and contain a number PageItem
+  const selectedClassName = page === numberPage ? "selected" : ""
   const numberClassName = typeof numberPage === "number" ? "number" : ""
 
   const handleChangePageInItem = () => {
@@ -16,7 +18,9 @@ const PageItem = ({ numberPage }: { numberPage: string | number }) => {
 
   return (
     <li>
-      <button className={`${selectedClassName} ${numberClassName}`} onClick={handleChangePageInItem}>{numberPage}</button>
+      <button className={`${selectedClassName} ${numberClassName}`} onClick={handleChangePageInItem}>
+        {numberPage}
+      </button>
     </li>
   )
 }
