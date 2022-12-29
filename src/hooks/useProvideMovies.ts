@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect } from "react"
-import { API_MOST_POPULAR } from "../const"
+import { API_MOST_POPULAR, TOTAL_PAGES } from "../const"
 import type { FailResponse, Response, Movie } from "@customTypes/movies"
 
 const useProvideMovies = () => {
@@ -36,8 +36,6 @@ const useProvideMovies = () => {
 
             // Check if API fail
             comprobeMoviesError(data)
-
-            console.log(data)
             
             setMovies(currentMovies)
             setError("")
@@ -59,7 +57,7 @@ const useProvideMovies = () => {
     return {
         movies,
         page,
-        totalPages: 500,
+        totalPages: TOTAL_PAGES,
         handleChangePage,
         loading, 
         error

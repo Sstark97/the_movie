@@ -26,4 +26,7 @@ const API_MOST_POPULAR = `${import.meta.env.VITE_API}movie/popular?api_key=${imp
 // That´s the base url of movies films
 const IMG_URI = "https://image.tmdb.org/t/p/w220_and_h330_face/"
 
-export { API_MOST_POPULAR, IMG_URI, ROUTER }
+// It´s the number provided by the API
+const TOTAL_PAGES = 500
+
+export { API_MOST_POPULAR, IMG_URI, ROUTER, TOTAL_PAGES}
