@@ -13,7 +13,7 @@ const Pagination = () => {
     } else if (page <= totalPages - 3) {
       setNearPages([1, "...", page - 1, page, page + 1, "...", totalPages])
     } else {
-      setNearPages([1, "...", page - 4, page - 3, page - 2, page - 1, totalPages])
+      setNearPages([1, "...", totalPages - 4, totalPages - 3, totalPages - 2, totalPages - 1, totalPages])
     }
   }, [page])
 
