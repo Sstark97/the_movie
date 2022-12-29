@@ -10,7 +10,9 @@ const Pagination = () => {
   return (
     <ul>
       <PreviousPage />
-      {nearPages.map((numberPage) => <PageItem key={uuidv4()} numberPage={numberPage}/>)}
+      {nearPages.map((numberPage) => (
+        <PageItem key={uuidv4()} numberPage={numberPage} />
+      ))}
       <NextPage />
     </ul>
   )

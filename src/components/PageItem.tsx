@@ -1,20 +1,17 @@
 import usePagination from "@hooks/usePagination"
 
-const PageItem = ({ numberPage}: {numberPage: string | number}) => {
-    const { handleChangeNumberPage } = usePagination()
+const PageItem = ({ numberPage }: { numberPage: string | number }) => {
+  const { handleChangeNumberPage } = usePagination()
+
+  const handleChangePageInItem = () => {
+    if (typeof numberPage === "number") {
+      handleChangeNumberPage(numberPage)
+    }
+  }
+
   return (
     <li>
-      {typeof numberPage === "string" ? (
-        <button>{numberPage}</button>
-      ) : (
-        <button
-          onClick={() => {
-            handleChangeNumberPage(numberPage)
-          }}
-        >
-          {numberPage}
-        </button>
-      )}
+      <button onClick={handleChangePageInItem}>{numberPage}</button>
     </li>
   )
 }
