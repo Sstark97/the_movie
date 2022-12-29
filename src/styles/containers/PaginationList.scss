@@ -4,7 +4,7 @@
 .pagination{
     display: flex;
     align-items: center;
-    width: 87%;
+    width: 95%;
     
     button {
         background: transparent;
@@ -14,10 +14,10 @@
         color: $secondary;
         opacity: .8;
 
-        min-width: 32px;
-        height: 32px;
-        padding: 0px 6px;
-        margin: 0px 3px;
+        min-width: 2rem;
+        height: 2rem;
+        padding: 0 0.375rem;
+        margin: 0 0.188rem;
     }
 
     .not_number_btn {
@@ -29,11 +29,24 @@
         opacity: .3;
     }
 
+    .number:hover, .not_number_btn:not([disabled]):hover {
+        background: $secondary;
+        color: $primary;
+        opacity: .5;
+
+        
+        border-radius: 1rem;
+        text-align: center;
+        box-sizing: border-box;
+
+        cursor: pointer;
+    }
+
     .selected {
         background: $secondary;
         color: $primary;
 
-        border-radius: 16px;
+        border-radius: 1rem;
         text-align: center;
         box-sizing: border-box;
     }
