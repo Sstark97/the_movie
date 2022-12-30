@@ -5,7 +5,6 @@ import "@styles/components/MoviePoster.scss"
 
 const MoviePoster = ({ id }: MovieDetailProps) => {
   const { movie, loading } = useMovieDetails(id)
-
   const { poster_path, title } = movie
 
   return (

@@ -3,6 +3,12 @@ import { API_MOST_POPULAR, API_MOVIE_DETAIL, TOTAL_PAGES } from "../const"
 import type { FailResponse, Response, Movie } from "@customTypes/movies"
 import type { MovieDetails } from "@customTypes/movie"
 
+/**
+ * Custom Hook that manage all the Context 
+ * @returns movies, movie, page, totalPages,
+ * handleChangePage, handleChangeMovieId, 
+ * loading and error
+ */
 const useProvideMovies = () => {
     const [movies, setMovies] = useState<Movie[]>([] as Movie[])
     const [movie, setMovie] = useState<MovieDetails>({} as MovieDetails)

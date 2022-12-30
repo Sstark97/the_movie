@@ -2,12 +2,18 @@ import { useState, useEffect } from "react"
 import useMovies from "@hooks/useMovies"
 import type { AppContextInterface } from "@customTypes/context"
 
+/**
+ * Custom hook that allow to change the movies in Context
+ * whit a Server Pagination
+ * @returns nearPages handleChangePreviousPage, handleChangeNextPage 
+ * and handleChangeNumberPag
+ */
 const usePagination = () => {
   const [nearPages, setNearPages] = useState<(number | string)[]>([])
   const { page, totalPages, handleChangePage }: AppContextInterface = useMovies()
 
   /**
-   * Funtion that generate the range of near pages
+   * Function that generate the range of near pages
    * and set in state these range for generate the
    * pagination
    */
