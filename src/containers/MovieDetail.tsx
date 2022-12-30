@@ -1,6 +1,6 @@
 import useMovieDetails from "@hooks/useMovieDetail"
 import MoviePoster from "@components/MoviePoster"
-import MovieInfo from "@containers/MovieInfo"
+import MovieAllInfo from "@containers/MovieAllInfo"
 import type { MovieDetailProps } from "@customTypes/movie"
 import "@styles/containers/MovieDetails.scss"
 
@@ -16,7 +16,7 @@ const MovieDetail = ({ id }: MovieDetailProps) => {
       {!loading && popularity ? (
         <div className="movie_details">
           <MoviePoster id={id} />
-          <MovieInfo id={id} />
+          <MovieAllInfo id={id} />
         </div>
       ) : (
         <div>Loading</div>

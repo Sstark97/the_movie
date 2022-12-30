@@ -78,5 +78,5 @@ export type {
   MovieDetailProps, 
   MovieDetailsFormat, 
   GenreProps, 
-  ProductionCompaniesProps 
+  ProductionCompaniesProps,
 }
