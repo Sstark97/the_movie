@@ -4,6 +4,7 @@ import MovieDescription from "@components/MovieDescription"
 import ProductionCompanies from "@components/ProductionCompanies"
 import type { MovieDetailProps } from "@customTypes/movie"
 import MovieInfo from "@components/MovieInfo"
+import "@styles/containers/MovieAllInfo.scss"
 
 const MovieAllInfo = ({ id }: MovieDetailProps) => {
   return (

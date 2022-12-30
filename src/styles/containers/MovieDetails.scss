@@ -10,22 +10,6 @@
     padding: 1.5rem 2.2rem 1.5rem 2.2rem;
 }
 
-.several_info {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    p {
-        font-size: .9rem;
-    }
-
-    h3 {
-        width: 100%;
-        text-align: start;
-    }
-}
-
 .title_container {
     width: 100%;
     display: flex;
@@ -75,17 +59,6 @@
 }
 
 @include md (tablet) {
-    .several_info {
-
-        h2 {
-            font-size: 1.397rem;
-        }
-
-        p {
-            font-size: 1.1rem;
-        }
-    }
-
     .info_container:has(.stars) {
         .stars {
             width: 18%;
@@ -104,22 +77,6 @@
         margin: 2rem 0 2.5rem 0;
     }
 
-    .several_info {
-        width: 65%;
-        height: 100%;
-        align-self: flex-start;
-
-        padding-top: 1rem;
-
-        h2 {
-            font-size: 1.22rem;
-        }
-
-        p {
-            font-size: 1rem;
-        }
-    }
-
     .info_container:has(.stars) {
         .stars {
             width: 25%;
@@ -132,10 +89,6 @@
     .movie_details {
         padding: 0;
         justify-content: center;
-
-        .several_info {
-            width: 50%;
-        }
     }
 
     .info_container:nth-child(3) {
