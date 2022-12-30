@@ -8,7 +8,7 @@ import "@styles/containers/MovieList.scss"
 
 const MovieList = () => {
   const { movies, loading, error }: AppContextInterface = useMovies()
-  const className = loading || error ? "not_movies" : ""
+  const className = error ? "not_movies" : ""
 
   return (
     <>

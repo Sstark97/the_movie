@@ -1,8 +1,15 @@
 import useMovieDetails from "@hooks/useMovieDetail"
-import type { MovieDetailsFormat } from "@customTypes/movie"
+import type { MovieDetailsFormat, MovieInfoProps } from "@customTypes/movie"
 
-const MovieInfo = ({ movieInfo, id }: { movieInfo: string[]; id: number }) => {
+const MovieInfo = ({ movieInfo, id }: MovieInfoProps) => {
   const { movie } = useMovieDetails(id)
+
+  /**
+   * Function that comprobe if a string 
+   * is a key of MovieDetailsFormat
+   * @param str 
+   * @returns boolean
+   */
   const isAMovieProperty = (str: string): str is keyof MovieDetailsFormat => {
     return movieInfo.includes(str)
   }
@@ -10,9 +17,13 @@ const MovieInfo = ({ movieInfo, id }: { movieInfo: string[]; id: number }) => {
   return (
     <div className="info_container">
       {movieInfo.map((info) => {
+        /**
+         * Capitalize the Movie Propertie for use it
+         * by a label to have a description of the info displayed
+         */
         const infoFormat = info.split("_").map(infoStr => `${infoStr.charAt(0).toUpperCase()}${infoStr.slice(1)}`).join(" ")
 
-        return isAMovieProperty(info) ? <p>{`${infoFormat}: ${movie[info] as string}`}</p> : null
+        return isAMovieProperty(info) ? <p key={movie.id}>{`${infoFormat}: ${movie[info] as string}`}</p> : null
       })}
     </div>
   )

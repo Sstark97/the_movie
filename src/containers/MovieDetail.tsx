@@ -1,4 +1,5 @@
 import useMovieDetails from "@hooks/useMovieDetail"
+import Loading from "@components/Loading"
 import MoviePoster from "@components/MoviePoster"
 import MovieAllInfo from "@containers/MovieAllInfo"
 import type { MovieDetailProps } from "@customTypes/movie"
@@ -19,7 +20,7 @@ const MovieDetail = ({ id }: MovieDetailProps) => {
           <MovieAllInfo id={id} />
         </div>
       ) : (
-        <div>Loading</div>
+        <Loading />
       )}
     </>
   )

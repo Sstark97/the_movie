@@ -73,10 +73,16 @@ interface ProductionCompaniesProps {
   productionCompanies: ProductionCompany[]
 }
 
+interface MovieInfoProps {
+  movieInfo: string[]; 
+  id: number 
+}
+
 export type { 
   MovieDetails, 
   MovieDetailProps, 
   MovieDetailsFormat, 
   GenreProps, 
   ProductionCompaniesProps,
+  MovieInfoProps
 }
