@@ -68,8 +68,6 @@ const useProvideMovies = () => {
 
             setMovie(currentMovie as MovieDetails)
             setError("")
-
-            console.log(movie)
         } catch (e: unknown) {
             setError(`${e}`)
         } finally {
