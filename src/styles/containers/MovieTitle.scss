@@ -1,0 +1,14 @@
+.title_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    margin-top: 2rem;
+
+    h2 {
+        font-size: 1.4rem;
+
+        text-align: start;
+    }
+}

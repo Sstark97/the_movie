@@ -1,0 +1,55 @@
+@import '@styles/var.scss';
+@import "@styles/mixins.scss";
+
+.several_info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+        font-size: .9rem;
+    }
+
+    h3 {
+        width: 100%;
+        text-align: start;
+    }
+}
+
+@include md (tablet) {
+    .several_info {
+
+        h2 {
+            font-size: 1.397rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+        }
+    }
+}
+
+@include md (desktop) {
+    .several_info {
+        width: 65%;
+        height: 100%;
+        align-self: flex-start;
+
+        padding-top: 1rem;
+
+        h2 {
+            font-size: 1.22rem;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+    }
+}
+
+@include md (large) {
+    .several_info {
+        width: 50%;
+    }
+}

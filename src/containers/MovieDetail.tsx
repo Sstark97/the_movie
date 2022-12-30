@@ -1,43 +1,26 @@
-import moment from "moment"
-import useMovies from "@hooks/useMovies"
-import { IMG_URI } from "../const"
-import type { AppContextInterface } from "@customTypes/context"
-import type { Movie } from "@customTypes/movies"
-import Stars from "@components/Stars"
+import useMovieDetails from "@hooks/useMovieDetail"
+import Loading from "@components/Loading"
+import MoviePoster from "@components/MoviePoster"
+import MovieAllInfo from "@containers/MovieAllInfo"
+import type { MovieDetailProps } from "@customTypes/movie"
 import "@styles/containers/MovieDetails.scss"
 
-const MovieDetail = ({ searchTitle }: { searchTitle: string }) => {
-  const { movies }: AppContextInterface = useMovies()
-  const movie: Movie = movies.find((currentMovie) => currentMovie.title === searchTitle) as Movie
-  const { poster_path, title, original_title, original_language, release_date, overview, popularity, vote_average, vote_count } = movie
-  const formatDate = moment(release_date).format("D/MM/Y")
-  const year = moment(release_date).format("Y")
-  // Format popularity in base to 5 stars like the most
-  const popularityPercent = popularity >= 5000 ? 5 : parseFloat(((popularity * 5) / 5000).toFixed(1))
+const MovieDetail = ({ id }: MovieDetailProps) => {
+  const { movie, loading } = useMovieDetails(id)
+
+  const { popularity } = movie
 
   return (
-    <div className="movie_details">
-      <figure>
-        <img src={`${IMG_URI}${poster_path}`} alt={title} />
-      </figure>
-      <div className="several_info">
-        <h2>{`${title} (${year})`}</h2>
-        <div className="info_container">
-          <Stars stars={Math.round(popularityPercent)} />
-          <p>{formatDate}</p>
+    <>
+      {!loading && popularity ? (
+        <div className="movie_details">
+          <MoviePoster id={id} />
+          <MovieAllInfo id={id} />
         </div>
-        <div className="info_container">
-          <p>Original Title: {original_title}</p>
-          <p>Language: {original_language}</p>
-          <p></p>
-        </div>
-        <div className="info_container">
-          <p>Vote Average: {vote_average}</p>
-          <p>Total Votes: {vote_count}</p>
-        </div>
-        <p id="description">{overview}</p>
-      </div>
-    </div>
+      ) : (
+        <Loading />
+      )}
+    </>
   )
 }
 

@@ -23,10 +23,12 @@ const ROUTER: Routes[] = [
 // Complete endPoint of API with api key
 const API_MOST_POPULAR = `${import.meta.env.VITE_API}movie/popular?api_key=${import.meta.env.VITE_API_KEY_AUTH_V3}`
 
+const API_MOVIE_DETAIL = `${import.meta.env.VITE_API}movie/id?api_key=${import.meta.env.VITE_API_KEY_AUTH_V3}`
+
 // That´s the base url of movies films
 const IMG_URI = "https://image.tmdb.org/t/p/w220_and_h330_face/"
 
 // It´s the number provided by the API
 const TOTAL_PAGES = 500
 
-export { API_MOST_POPULAR, IMG_URI, ROUTER, TOTAL_PAGES}
+export { API_MOST_POPULAR, API_MOVIE_DETAIL, IMG_URI, ROUTER, TOTAL_PAGES}

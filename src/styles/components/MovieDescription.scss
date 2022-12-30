@@ -1,0 +1,25 @@
+@import '@styles/var.scss';
+@import "@styles/mixins.scss";
+
+#description {
+    width: 100%;
+    max-width: 65ch;
+    align-self: flex-start;
+
+    font-size: 1rem;
+
+    margin-top: 1rem;
+}
+
+@include md (desktop) {
+    #description {
+        padding: 1.8rem 0 2rem 0;
+    }
+}
+
+@include md (large) {
+    
+    #description {
+        font-size: 1.2rem;
+    }
+}
