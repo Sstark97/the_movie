@@ -15,12 +15,12 @@
     a {
         color: #fff;
         text-decoration: none;
-    }
 
-    img {
-        width: 100%;
-        border-radius: .5rem;
-        object-fit: cover;
+        img {
+            width: 100%;
+            border-radius: .5rem;
+            object-fit: cover;
+        }
     }
 }
 
@@ -63,9 +63,11 @@
     .movie_item {
         width: 20%;
 
-        img {
-            width: 9.375rem;
-            height: 14.063rem;
+        a {
+            img {
+                width: 9.375rem;
+                height: 14.063rem;
+            }
         }
     }
 
