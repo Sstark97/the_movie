@@ -85,16 +85,6 @@
     }
 }
 
-#description {
-    width: 100%;
-    max-width: 65ch;
-    align-self: flex-start;
-
-    font-size: 1rem;
-
-    margin-top: 1rem;
-}
-
 @include md (tablet) {
     .movie_details {
         figure {
@@ -162,10 +152,6 @@
         }
     }
 
-    #description {
-        padding: 3rem 0 2rem 0;
-    }
-
 }
 
 @include md (large) {
@@ -179,18 +165,10 @@
 
         .several_info {
             width: 50%;
-
-            p {
-                font-size: 1.15rem;
-            }
         }
     }
 
     .info_container:nth-child(3) {
         padding-top: 2rem;
-    }
-
-    #description {
-        font-size: 1.2rem;
     }
 }

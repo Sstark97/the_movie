@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from "uuid"
 import useMovieDetails from "@hooks/useMovieDetail"
 import type { MovieDetailsFormat, MovieInfoProps } from "@customTypes/movie"
 
@@ -23,7 +24,7 @@ const MovieInfo = ({ movieInfo, id }: MovieInfoProps) => {
          */
         const infoFormat = info.split("_").map(infoStr => `${infoStr.charAt(0).toUpperCase()}${infoStr.slice(1)}`).join(" ")
 
-        return isAMovieProperty(info) ? <p key={movie.id}>{`${infoFormat}: ${movie[info] as string}`}</p> : null
+        return isAMovieProperty(info) ? <p key={uuidv4()}>{`${infoFormat}: ${movie[info] as string}`}</p> : null
       })}
     </div>
   )
