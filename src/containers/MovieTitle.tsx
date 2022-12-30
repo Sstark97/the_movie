@@ -1,6 +1,7 @@
 import useMovieDetails from "@hooks/useMovieDetail"
 import Genres from "@components/Genres"
 import type { MovieDetailProps } from "@customTypes/movie"
+import "@styles/containers/MovieTitle.scss"
 
 const MovieTitle = ({ id }: MovieDetailProps) => {
   const { movie } = useMovieDetails(id)

@@ -10,8 +10,6 @@ const MovieDetail = ({ id }: MovieDetailProps) => {
 
   const { popularity } = movie
 
-  console.log(movie)
-
   return (
     <>
       {!loading && popularity ? (
