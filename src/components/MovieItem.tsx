@@ -11,9 +11,6 @@ const MovieItem = ({ movie }: { movie: Movie }) => {
   // Format Date with moment.js and in English Format
   const formatDate = moment(release_date).format("ll")
 
-  // Format popularity in base to 5 stars like the most
-  const popularityPercent = popularity >= 5000 ? 5 : parseFloat(((popularity * 5) / 5000).toFixed(1))
-
   return (
     <li className="movie_item">
       <Link
@@ -24,7 +21,7 @@ const MovieItem = ({ movie }: { movie: Movie }) => {
       >
         <img src={`${IMG_URI}${poster_path}`} alt="poster" />
         <div className="movie_info">
-          <Stars stars={Math.round(popularityPercent)} />
+          <Stars popularity={popularity} />
           <h3>{title}</h3>
           <p>{formatDate}</p>
         </div>

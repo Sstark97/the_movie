@@ -28,7 +28,7 @@ interface FailResponse {
     success: boolean;
 }
 interface StarsProps {
-    stars: number
+    popularity: number
 }
 
 interface PageItemProps {

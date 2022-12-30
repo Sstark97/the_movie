@@ -7,6 +7,7 @@ interface AppContextInterface {
     page: number,
     totalPages: number,
     handleChangePage(newPage: number): void,
+    handleChangeMovieId(id: number): void,
     loading: boolean, 
     error: string
 }

@@ -1,9 +1,12 @@
 import type { StarsProps } from "@customTypes/movies"
 import "@styles/components/Stars.scss"
 
-const Stars = ({ stars }: StarsProps) => {
+const Stars = ({ popularity }: StarsProps) => {
   
   // Create an array with the numbers of Stars pass in props
+  console.log(popularity)
+  const popularityTransform = popularity >= 5000 ? 5 : parseFloat(((popularity * 5) / 5000).toFixed(1))
+  const stars = Math.round(popularityTransform)
   const stars_arr = Array(stars).fill("★")
 
   return (

@@ -6,6 +6,7 @@ import type { MovieDetails } from "@customTypes/movie"
 const useProvideMovies = () => {
     const [movies, setMovies] = useState<Movie[]>([] as Movie[])
     const [movie, setMovie] = useState<MovieDetails>({} as MovieDetails)
+    const [movieId, setMovideId] = useState(0)
     const [page, setPage] = useState(1)
     const [loading, setLoading] = useState<boolean>(false)
     const [error, setError] = useState<string>("")
@@ -38,8 +39,6 @@ const useProvideMovies = () => {
 
             // Check if API fail
             comprobeMoviesError(data)
-
-            console.log(movies)
             
             setMovies(currentMovies)
             setError("")
@@ -50,27 +49,31 @@ const useProvideMovies = () => {
         }
     }, [])
 
-    const loadMovie = useCallback(async (id: string) => {
+    const loadMovie = useCallback(async (id: number) => {
         setLoading(true)
 
         try {
-            const URI = API_MOVIE_DETAIL.replace("id", id)
+            const URI = API_MOVIE_DETAIL.replace("id", id.toString())
             const response = await fetch(URI)
             const currentMovie: MovieDetails | FailResponse = await response.json()
 
             // Check if API fail
             comprobeMoviesError(currentMovie)
 
-            console.log(movie)
-            
             setMovie(currentMovie as MovieDetails)
             setError("")
+
+            console.log(movie)
         } catch (e: unknown) {
             setError(`${e}`)
         } finally {
             setLoading(false)
         }
     }, [])
+
+    const handleChangeMovieId = (id: number) => {
+        setMovideId(id)
+    }
 
     const handleChangePage = (newPage: number) => {
         setPage(newPage)
@@ -80,12 +83,19 @@ const useProvideMovies = () => {
         loadMovies(page)
     }, [page])
 
+    useEffect(() => {
+        if(movieId !== 0) {
+            loadMovie(movieId)
+        }
+    }, [movieId])
+
     return {
         movies,
         movie,
         page,
         totalPages: TOTAL_PAGES,
         handleChangePage,
+        handleChangeMovieId,
         loading, 
         error
     }
