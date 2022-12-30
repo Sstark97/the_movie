@@ -56,8 +56,13 @@ interface MovieDetails {
   vote_count: number
 }
 
+interface MovieDetailsFormat extends MovieDetails {
+  formatDate: string,
+  year: string
+}
+
 interface MovieDetailProps {
   id: number
 }
 
-export type { MovieDetails, MovieDetailProps }
+export type { MovieDetails, MovieDetailProps, MovieDetailsFormat}
