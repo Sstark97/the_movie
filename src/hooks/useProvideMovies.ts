@@ -1,9 +1,11 @@
 import { useState, useCallback, useEffect } from "react"
-import { API_MOST_POPULAR, TOTAL_PAGES } from "../const"
+import { API_MOST_POPULAR, API_MOVIE_DETAIL, TOTAL_PAGES } from "../const"
 import type { FailResponse, Response, Movie } from "@customTypes/movies"
+import type { MovieDetails } from "@customTypes/movie"
 
 const useProvideMovies = () => {
     const [movies, setMovies] = useState<Movie[]>([] as Movie[])
+    const [movie, setMovie] = useState<MovieDetails>({} as MovieDetails)
     const [page, setPage] = useState(1)
     const [loading, setLoading] = useState<boolean>(false)
     const [error, setError] = useState<string>("")
@@ -13,7 +15,7 @@ const useProvideMovies = () => {
      * instance of FailResponse
      * @param data 
      */
-    const comprobeMoviesError = (data: Response | FailResponse) => {
+    const comprobeMoviesError = (data: Response | MovieDetails | FailResponse) => {
         if((data as FailResponse).status_code) {
             const dataError = data as FailResponse
             const { status_message } = dataError
@@ -48,6 +50,28 @@ const useProvideMovies = () => {
         }
     }, [])
 
+    const loadMovie = useCallback(async (id: string) => {
+        setLoading(true)
+
+        try {
+            const URI = API_MOVIE_DETAIL.replace("id", id)
+            const response = await fetch(URI)
+            const currentMovie: MovieDetails | FailResponse = await response.json()
+
+            // Check if API fail
+            comprobeMoviesError(currentMovie)
+
+            console.log(movie)
+            
+            setMovie(currentMovie as MovieDetails)
+            setError("")
+        } catch (e: unknown) {
+            setError(`${e}`)
+        } finally {
+            setLoading(false)
+        }
+    }, [])
+
     const handleChangePage = (newPage: number) => {
         setPage(newPage)
     }
@@ -58,6 +82,7 @@ const useProvideMovies = () => {
 
     return {
         movies,
+        movie,
         page,
         totalPages: TOTAL_PAGES,
         handleChangePage,

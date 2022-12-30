@@ -35,15 +35,10 @@ interface PageItemProps {
     numberPage: number | string
 }
 
-interface MovieDetailProps {
-    id: number
-}
-
 export type {
     Movie,
     Response,
     FailResponse,
     StarsProps,
     PageItemProps,
-    MovieDetailProps
 }

@@ -3,7 +3,8 @@ import useMovies from "@hooks/useMovies"
 import Stars from "@components/Stars"
 import { IMG_URI } from "../const"
 import type { AppContextInterface } from "@customTypes/context"
-import type { Movie, MovieDetailProps } from "@customTypes/movies"
+import type { Movie } from "@customTypes/movies"
+import type { MovieDetailProps } from "@customTypes/movie"
 import "@styles/containers/MovieDetails.scss"
 
 const MovieDetail = ({ id }: MovieDetailProps) => {
