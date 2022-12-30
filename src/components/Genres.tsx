@@ -3,7 +3,7 @@ import "@styles/components/Genres.scss"
 
 const Genres = ({ genres }: GenreProps) => {
   return (
-    <ul className="genres">
+    <ul className="genres_container">
         {genres.map(genre => <li key={genre.id}>{genre.name}</li>)}
     </ul>
   )

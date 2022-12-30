@@ -57,7 +57,7 @@ interface MovieDetails {
 }
 
 interface MovieDetailsFormat extends MovieDetails {
-  formatDate: string,
+  formatDate: string
   year: string
 }
 
@@ -69,4 +69,14 @@ interface GenreProps {
   genres: Genre[]
 }
 
-export type { MovieDetails, MovieDetailProps, MovieDetailsFormat, GenreProps}
+interface ProductionCompaniesProps {
+  productionCompanies: ProductionCompany[]
+}
+
+export type { 
+  MovieDetails, 
+  MovieDetailProps, 
+  MovieDetailsFormat, 
+  GenreProps, 
+  ProductionCompaniesProps 
+}

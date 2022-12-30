@@ -1,6 +1,7 @@
 import useMovieDetails from "@hooks/useMovieDetail"
 import Stars from "@components/Stars"
 import Genres from "@components/Genres"
+import ProductionCompanies from "@components/ProductionCompanies"
 import { IMG_URI } from "../const"
 import type { MovieDetailProps } from "@customTypes/movie"
 import "@styles/containers/MovieDetails.scss"
@@ -8,7 +9,21 @@ import "@styles/containers/MovieDetails.scss"
 const MovieDetail = ({ id }: MovieDetailProps) => {
   const { movie, loading } = useMovieDetails(id)
 
-  const { formatDate, genres, original_language, original_title, popularity, poster_path, overview, title, tagline, vote_average, vote_count, year } = movie
+  const { 
+    formatDate, 
+    genres, 
+    original_language, 
+    original_title, 
+    popularity, 
+    poster_path,
+    production_companies,
+    overview, 
+    title, 
+    tagline, 
+    vote_average, 
+    vote_count, 
+    year 
+  } = movie
 
   console.log(movie)
 
@@ -28,6 +43,7 @@ const MovieDetail = ({ id }: MovieDetailProps) => {
               <Stars popularity={popularity} />
               <p>{formatDate}</p>
             </div>
+            <ProductionCompanies productionCompanies={production_companies}/>
             <div className="info_container">
               <p>Original Title: {original_title}</p>
               <p>Language: {original_language}</p>
