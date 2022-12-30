@@ -65,4 +65,8 @@ interface MovieDetailProps {
   id: number
 }
 
-export type { MovieDetails, MovieDetailProps, MovieDetailsFormat}
+interface GenreProps {
+  genres: Genre[]
+}
+
+export type { MovieDetails, MovieDetailProps, MovieDetailsFormat, GenreProps}

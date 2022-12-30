@@ -1,5 +1,6 @@
 import useMovieDetails from "@hooks/useMovieDetail"
 import Stars from "@components/Stars"
+import Genres from "@components/Genres"
 import { IMG_URI } from "../const"
 import type { MovieDetailProps } from "@customTypes/movie"
 import "@styles/containers/MovieDetails.scss"
@@ -7,17 +8,9 @@ import "@styles/containers/MovieDetails.scss"
 const MovieDetail = ({ id }: MovieDetailProps) => {
   const { movie, loading } = useMovieDetails(id)
 
-  const { 
-    poster_path, 
-    title, 
-    original_title, 
-    original_language, 
-    overview, popularity, 
-    vote_average, 
-    vote_count,
-    formatDate,
-    year
-  } = movie
+  const { formatDate, genres, original_language, original_title, popularity, poster_path, overview, title, tagline, vote_average, vote_count, year } = movie
+
+  console.log(movie)
 
   return (
     <>
@@ -27,7 +20,10 @@ const MovieDetail = ({ id }: MovieDetailProps) => {
             <img src={`${IMG_URI}${poster_path}`} alt={title} />
           </figure>
           <div className="several_info">
-            <h2>{`${title} (${year})`}</h2>
+            <div className="title_container">
+              <h2>{`${title} (${year})`}</h2>
+              <Genres genres={genres} />
+            </div>
             <div className="info_container">
               <Stars popularity={popularity} />
               <p>{formatDate}</p>
@@ -41,7 +37,10 @@ const MovieDetail = ({ id }: MovieDetailProps) => {
               <p>Vote Average: {vote_average}</p>
               <p>Total Votes: {vote_count}</p>
             </div>
-            <p id="description">{overview}</p>
+            <div id="description">
+              <h3>{tagline.replace(".", "")}</h3>
+              <p>{overview}</p>
+            </div>
           </div>
         </div>
       ) : (

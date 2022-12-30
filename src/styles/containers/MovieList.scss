@@ -6,7 +6,7 @@ h1 {
     padding: 2rem;
 }
 
-ul {
+.movie_list {
     list-style: none;
 
     width: 75%;
@@ -26,19 +26,19 @@ ul {
 }
 
 @include md (tablet) {
-    ul {
+    .movie_list {
         width: 70%;
     }
 }
 
 @include md (desktop) {
-    ul {
+    .movie_list {
         width: 85%;
     }
 }
 
 @include md (large) {
-    ul {
+    .movie_list {
         width: 75%;
     }
 }

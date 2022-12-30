@@ -27,16 +27,29 @@
     flex-direction: column;
     align-items: center;
 
-    h2 {
+    p {
+        font-size: .9rem;
+    }
+
+    h3 {
         width: 100%;
-        margin-top: .8rem;
+        text-align: start;
+    }
+}
+
+.title_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    margin-top: 2rem;
+
+    h2 {
+        width: 50%;
         font-size: 1.4rem;
 
         text-align: start;
-    }
-
-    p {
-        font-size: .9rem;
     }
 }
 
@@ -46,12 +59,12 @@
     flex-direction: column;
 }
 
-.info_container:nth-child(4) {
-    padding-top: .7rem;
+.info_container:nth-child(2) {
+    padding: 0;
 }
 
-.info_container:nth-child(5){
-    padding: .4rem 0 .4rem 0;
+.info_container {
+    padding-top: .5rem;
 }
 
 .info_container:has(.stars) {
@@ -79,6 +92,8 @@
     align-self: flex-start;
 
     font-size: 1rem;
+
+    margin-top: 1rem;
 }
 
 @include md (tablet) {

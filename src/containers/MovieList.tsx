@@ -8,11 +8,12 @@ import "@styles/containers/MovieList.scss"
 
 const MovieList = () => {
   const { movies, loading, error }: AppContextInterface = useMovies()
+  const className = loading || error ? "not_movies" : ""
 
   return (
     <>
       {!error ? <h1>Most Popular Movies</h1> : null}
-      <ul className={loading || error ? "not_movies" : ""}>
+      <ul className={`movie_list ${className}`}>
         {error ? <Error /> : null}
         {!loading ? movies.map((movie: Movie) => <MovieItem key={movie.id} movie={movie} />) : <Loading />}
       </ul>
