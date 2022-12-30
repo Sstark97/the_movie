@@ -36,7 +36,7 @@ interface PageItemProps {
 }
 
 interface MovieDetailProps {
-    searchTitle: string
+    id: number
 }
 
 export type {

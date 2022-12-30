@@ -3,10 +3,10 @@ import MovieDetail from "@containers/MovieDetail"
 
 const Movie = () => {
   const [ searchParams ] = useSearchParams()
-  const title = searchParams.get("title") as string
+  const id = parseInt(searchParams.get("id") as string)
 
   return (
-    <MovieDetail searchTitle={title} />
+    <MovieDetail id={id} />
   )
 }
 

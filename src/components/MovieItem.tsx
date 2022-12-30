@@ -6,7 +6,7 @@ import { IMG_URI } from "../const"
 import "@styles/components/MovieItem.scss"
 
 const MovieItem = ({ movie }: { movie: Movie }) => {
-  const { poster_path, title, release_date, popularity } = movie
+  const { id, poster_path, title, release_date, popularity } = movie
 
   // Format Date with moment.js and in English Format
   const formatDate = moment(release_date).format("ll")
@@ -19,7 +19,7 @@ const MovieItem = ({ movie }: { movie: Movie }) => {
       <Link
         to={{
           pathname: "/movie",
-          search: `?title=${title}`,
+          search: `?id=${id}`,
         }}
       >
         <img src={`${IMG_URI}${poster_path}`} alt="poster" />
