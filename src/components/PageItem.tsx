@@ -1,8 +1,9 @@
 import useMovies from "@hooks/useMovies"
 import usePagination from "@hooks/usePagination"
 import type { AppContextInterface } from "@customTypes/context"
+import type { PageItemProps } from "@customTypes/movies"
 
-const PageItem = ({ numberPage }: { numberPage: string | number }) => {
+const PageItem = ({ numberPage }: PageItemProps) => {
   const { page }: AppContextInterface = useMovies()
   const { handleChangeNumberPage } = usePagination()
 

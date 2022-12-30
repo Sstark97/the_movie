@@ -1,6 +1,7 @@
+import type { StarsProps } from "@customTypes/movies"
 import "@styles/components/Stars.scss"
 
-const Stars = ({ stars }: { stars: number }) => {
+const Stars = ({ stars }: StarsProps) => {
   
   // Create an array with the numbers of Stars pass in props
   const stars_arr = Array(stars).fill("★")

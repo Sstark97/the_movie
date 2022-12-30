@@ -1,8 +1,6 @@
-interface Routes{
-    route: string
+interface Routes {
+  route: string
   element: React.LazyExoticComponent<React.ComponentType<unknown>>
 }
 
-export type {
-    Routes
-}
+export type { Routes }

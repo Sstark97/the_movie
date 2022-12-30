@@ -27,9 +27,23 @@ interface FailResponse {
     status_message: string;
     success: boolean;
 }
+interface StarsProps {
+    stars: number
+}
+
+interface PageItemProps {
+    numberPage: number | string
+}
+
+interface MovieDetailProps {
+    searchTitle: string
+}
 
 export type {
     Movie,
     Response,
-    FailResponse
+    FailResponse,
+    StarsProps,
+    PageItemProps,
+    MovieDetailProps
 }
