@@ -1,9 +1,10 @@
 @import '@styles/var.scss';
 @import "@styles/mixins.scss";
 
-#not_found {
-  height: 45vh;
+#not_found_container {
+  height: 75vh;
 }
+
 #eyes {
   display: block;
   position: relative;
@@ -109,5 +110,31 @@
 @keyframes text-show {
   to {
     text-indent: -23.313rem;
+  }
+}
+
+@include md (tablet) {
+  #not_found_container {
+    height: 79vh;
+  }
+}
+
+@include md (desktop) {
+  #not_found_container {
+    height: 78vh;
+  }
+
+  #eyes {
+    margin: 10% auto 0;
+  }
+}
+
+@include md (large) {
+  #not_found_container {
+    height: 80vh;
+  }
+
+  #eyes {
+    margin: 8% auto 0;
   }
 }
