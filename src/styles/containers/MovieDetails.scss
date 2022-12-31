@@ -30,8 +30,6 @@
     align-self: flex-start;
 
     .stars {
-        width: 38%;
-
         span {
             font-size: 1.5rem;
         }
@@ -43,14 +41,6 @@
     }
 }
 
-@include md (tablet) {
-    .info_container:has(.stars) {
-        .stars {
-            width: 18%;
-        }
-    }
-}
-
 @include md (desktop) {
     .movie_details {
         height: 70vh;
@@ -59,12 +49,6 @@
         justify-content: space-between;
 
         margin: 2rem 0 2.5rem 0;
-    }
-
-    .info_container:has(.stars) {
-        .stars {
-            width: 25%;
-        }
     }
 
 }

@@ -36,10 +36,8 @@
         height: 100%;
         align-self: flex-start;
 
-        padding-top: 1rem;
-
         h2 {
-            font-size: 1.22rem;
+            font-size: 1.3rem;
         }
 
         p {
@@ -51,5 +49,7 @@
 @include md (large) {
     .several_info {
         width: 50%;
+
+        padding-top: 1rem;
     }
 }
