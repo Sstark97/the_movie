@@ -6,9 +6,9 @@ const MovieInfo = ({ movieInfo, id }: MovieInfoProps) => {
   const { movie } = useMovieDetails(id)
 
   /**
-   * Function that comprobe if a string 
+   * Function that comprobe if a string
    * is a key of MovieDetailsFormat
-   * @param str 
+   * @param str
    * @returns boolean
    */
   const isAMovieProperty = (str: string): str is keyof MovieDetailsFormat => {
@@ -22,7 +22,10 @@ const MovieInfo = ({ movieInfo, id }: MovieInfoProps) => {
          * Capitalize the Movie Propertie for use it
          * by a label to have a description of the info displayed
          */
-        const infoFormat = info.split("_").map(infoStr => `${infoStr.charAt(0).toUpperCase()}${infoStr.slice(1)}`).join(" ")
+        const infoFormat = info
+          .split("_")
+          .map((infoStr) => `${infoStr.charAt(0).toUpperCase()}${infoStr.slice(1)}`)
+          .join(" ")
 
         return isAMovieProperty(info) ? <p key={uuidv4()}>{`${infoFormat}: ${movie[info] as string}`}</p> : null
       })}

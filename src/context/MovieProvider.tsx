@@ -7,24 +7,9 @@ const MovieContext = createContext<AppContextInterface>({} as AppContextInterfac
 
 const MovieProvider = ({ children }: Children) => {
   const { Provider } = MovieContext
-  const { movies, movie, page, totalPages, handleChangePage, handleChangeMovieId, loading, error } = useProvideMovies()
+  const state = useProvideMovies()
 
-  return (
-    <Provider
-      value={{
-        movies,
-        movie,
-        page,
-        totalPages,
-        handleChangePage,
-        handleChangeMovieId,
-        loading,
-        error,
-      }}
-    >
-      {children}
-    </Provider>
-  )
+  return <Provider value={state}>{children}</Provider>
 }
 
 export { MovieContext, MovieProvider }

@@ -8,7 +8,6 @@ import "@styles/containers/MovieDetails.scss"
 
 const MovieDetail = ({ id }: MovieDetailProps) => {
   const { movie, loading, error} = useMovieDetails(id)
-
   const { popularity } = movie
 
   return (
