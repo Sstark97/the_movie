@@ -20,6 +20,16 @@ const ROUTER: Routes[] = [
   { route: "*", element: NotFound },
 ]
 
+// Enum with the Actions of reducer
+enum ActionTypes {
+  ERROR = "ERROR",
+  LOAD = "LOAD",
+  LOAD_MOVIES = "LOAD_MOVIES",
+  LOAD_MOVIE = "LOAD_MOVIE",
+  PAGE = "PAGE",
+  MOVIE_ID = "MOVIE_ID",
+}
+
 // Complete endPoint of API with api key
 const API_MOST_POPULAR = `${import.meta.env.VITE_API}movie/popular?api_key=${import.meta.env.VITE_API_KEY_AUTH_V3}`
 
@@ -31,4 +41,11 @@ const IMG_URI = "https://image.tmdb.org/t/p/w220_and_h330_face/"
 // It´s the number provided by the API
 const TOTAL_PAGES = 500
 
-export { API_MOST_POPULAR, API_MOVIE_DETAIL, IMG_URI, ROUTER, TOTAL_PAGES}
+export { 
+  ActionTypes, 
+  API_MOST_POPULAR, 
+  API_MOVIE_DETAIL, 
+  IMG_URI, 
+  ROUTER, 
+  TOTAL_PAGES
+}

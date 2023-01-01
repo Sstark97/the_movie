@@ -2,7 +2,7 @@
 @import "@styles/mixins.scss";
 
 #not_found_container {
-  height: 75vh;
+  height: 83vh;
 }
 
 #eyes {
@@ -113,15 +113,9 @@
   }
 }
 
-@include md (tablet) {
-  #not_found_container {
-    height: 79vh;
-  }
-}
-
 @include md (desktop) {
   #not_found_container {
-    height: 78vh;
+    height: 82.6vh;
   }
 
   #eyes {

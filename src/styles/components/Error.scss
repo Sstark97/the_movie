@@ -2,8 +2,18 @@
 @import "@styles/mixins.scss";
 
 .error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 65vh;
+
+    margin-top: 5rem;
+
     p {
         color: rgb(213, 41, 41);
+        max-width: 25ch;
+
+        margin-top: .5rem;
     }
 }
 
@@ -15,16 +25,20 @@
 @include md(tablet) {
     .error {
         font-size: 1.2rem;
-    }
+        height: 73vh;
 
-    .not_movies:has(.error) {
-        margin-top: 5rem;
-        height: 71.5vh;
+        margin-top: 7rem;
     }
 }
 
 @include md(desktop) {
-    .not_movies:has(.error) {
-        height: 70.1vh;
+    .error {
+        height: 70vh;
+    }
+}
+
+@include md(large) {
+    .error {
+        height: 65vh;
     }
 }
