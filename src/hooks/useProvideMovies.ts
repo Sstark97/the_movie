@@ -1,6 +1,7 @@
-import { useState, useCallback, useEffect } from "react"
+import { useState, useCallback, useEffect, useReducer } from "react"
 import { useLocation } from "react-router-dom"
 import { API_MOST_POPULAR, API_MOVIE_DETAIL, TOTAL_PAGES } from "../const"
+import { giveMyInitialState, ActionTypes, reducer } from "@context/reducer"
 import type { FailResponse, Response, Movie } from "@customTypes/movies"
 import type { MovieDetails } from "@customTypes/movie"
 
@@ -11,12 +12,17 @@ import type { MovieDetails } from "@customTypes/movie"
  * loading and error
  */
 const useProvideMovies = () => {
-    const [movies, setMovies] = useState<Movie[]>([] as Movie[])
-    const [movie, setMovie] = useState<MovieDetails>({} as MovieDetails)
-    const [movieId, setMovideId] = useState(0)
-    const [page, setPage] = useState(1)
-    const [loading, setLoading] = useState<boolean>(false)
-    const [error, setError] = useState<string>("")
+    // const [movies, setMovies] = useState<Movie[]>([] as Movie[])
+    // const [movie, setMovie] = useState<MovieDetails>({} as MovieDetails)
+    // const [movieId, setMovideId] = useState(0)
+    // const [page, setPage] = useState(1)
+    // const [loading, setLoading] = useState<boolean>(false)
+    // const [error, setError] = useState<string>("")
+
+    const [state, dispatch] = useReducer(reducer, giveMyInitialState());
+    const { page, movieId, movies } = state
+
+    console.log(movies)
 
     /**
      * Use location to reset possible Errors
@@ -43,55 +49,48 @@ const useProvideMovies = () => {
      * and Check if the API throw an Error
      */
     const loadMovies = useCallback(async (newPage: number) => {
-        setLoading(true)
+        dispatch({ type: ActionTypes.LOAD })
 
         try {
             const response = await fetch(`${API_MOST_POPULAR}&page=${newPage}`)
             const data: Response | FailResponse= await response.json()
-            const { results: currentMovies } = data as Response
+            const { results: movies } = data as Response
 
             // Check if API fail
             comprobeMoviesError(data)
-            
-            setMovies(currentMovies)
-            setError("")
+            dispatch({ type: ActionTypes.LOAD_MOVIES, payload: { movies } })
         } catch (e: unknown) {
-            setError(`${e}`)
-        } finally {
-            setLoading(false)
+            dispatch({type: ActionTypes.ERROR, payload: {error: `${e}`}})
         }
     }, [])
 
     const loadMovie = useCallback(async (id: number) => {
-        setLoading(true)
+        dispatch({ type: ActionTypes.LOAD })
 
         try {
             const URI = API_MOVIE_DETAIL.replace("id", id.toString())
             const response = await fetch(URI)
-            const currentMovie: MovieDetails | FailResponse = await response.json()
+            const movie: MovieDetails | FailResponse = await response.json()
 
             // Check if API fail
-            comprobeMoviesError(currentMovie)
-
-            setMovie(currentMovie as MovieDetails)
-            setError("")
+            comprobeMoviesError(movie)
+    
+            dispatch({ type: ActionTypes.LOAD_MOVIE, payload: { movie: movie as MovieDetails}})
         } catch (e: unknown) {
-            setError(`${e}`)
-        } finally {
-            setLoading(false)
+            dispatch({type: ActionTypes.ERROR, payload: {error: `${e}`}})
         }
     }, [])
 
-    const handleChangeMovieId = (id: number) => {
-        setMovideId(id)
+    const handleChangeMovieId = (movieId: number) => {
+        dispatch({ type: ActionTypes.MOVIE_ID, payload: { movieId }})
     }
 
-    const handleChangePage = (newPage: number) => {
-        setPage(newPage)
+    const handleChangePage = (page: number) => {
+        dispatch({ type: ActionTypes.MOVIE_ID, payload: { page }})
     }
 
     useEffect(() => {
-        setError("")
+        dispatch({type: ActionTypes.ERROR, payload: {error: ""}})
     },[location])
 
     useEffect(() => {
@@ -105,14 +104,10 @@ const useProvideMovies = () => {
     }, [movieId])
 
     return {
-        movies,
-        movie,
-        page,
+        ...state,
         totalPages: TOTAL_PAGES,
         handleChangePage,
         handleChangeMovieId,
-        loading, 
-        error
     }
 }
 
