@@ -1,5 +1,6 @@
 import type { AppState, AppAction, AppReducerObject } from "@customTypes/context"
 import type { MovieDetails } from "@customTypes/movie"
+import { ActionTypes } from "../const"
 import { Movie } from "@customTypes/movies"
 
 const giveMyInitialState = (): AppState => ({
@@ -10,15 +11,6 @@ const giveMyInitialState = (): AppState => ({
   loading: true,
   error: "",
 })
-
-enum ActionTypes {
-  ERROR = "ERROR",
-  LOAD = "LOAD",
-  LOAD_MOVIES = "LOAD_MOVIES",
-  LOAD_MOVIE = "LOAD_MOVIE",
-  PAGE = "PAGE",
-  MOVIE_ID = "MOVIE_ID",
-}
 
 const reducerObject: AppReducerObject = {
   [ActionTypes.ERROR]: (state: AppState, action: AppAction): AppState => ({
@@ -56,4 +48,7 @@ const reducerObject: AppReducerObject = {
 
 const reducer = (state: AppState, action: AppAction): AppState => reducerObject[action.type](state, action) ?? state
 
-export { giveMyInitialState, ActionTypes, reducer }
+export { 
+  giveMyInitialState, 
+  reducer 
+}
