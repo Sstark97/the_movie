@@ -2,7 +2,7 @@
 @import "@styles/mixins.scss";
 
 #not_found_container {
-  height: 83vh;
+  height: 76.2vh;
 }
 
 #eyes {
@@ -110,6 +110,13 @@
 @keyframes text-show {
   to {
     text-indent: -23.313rem;
+  }
+}
+
+
+@include md (tablet) {
+  #not_found_container {
+    height: 78.3vh;
   }
 }
 
