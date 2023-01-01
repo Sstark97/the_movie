@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect } from "react"
+import { useLocation } from "react-router-dom"
 import { API_MOST_POPULAR, API_MOVIE_DETAIL, TOTAL_PAGES } from "../const"
 import type { FailResponse, Response, Movie } from "@customTypes/movies"
 import type { MovieDetails } from "@customTypes/movie"
@@ -16,6 +17,12 @@ const useProvideMovies = () => {
     const [page, setPage] = useState(1)
     const [loading, setLoading] = useState<boolean>(false)
     const [error, setError] = useState<string>("")
+
+    /**
+     * Use location to reset possible Errors
+     * when change the path of the app
+     */
+    const location = useLocation()
 
     /**
      * Function that throw an Error if data is
@@ -69,7 +76,6 @@ const useProvideMovies = () => {
             setMovie(currentMovie as MovieDetails)
             setError("")
         } catch (e: unknown) {
-            console.log(e)
             setError(`${e}`)
         } finally {
             setLoading(false)
@@ -83,6 +89,10 @@ const useProvideMovies = () => {
     const handleChangePage = (newPage: number) => {
         setPage(newPage)
     }
+
+    useEffect(() => {
+        setError("")
+    },[location])
 
     useEffect(() => {
         loadMovies(page)
