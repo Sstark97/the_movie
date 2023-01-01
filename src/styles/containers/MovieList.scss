@@ -19,12 +19,6 @@ h1 {
     padding: 1.5rem 0 1.5rem 0;
 }
 
-.not_movies {
-    height: 52.3vh;
-    align-items: flex-start;
-    margin-top: 7rem;
-}
-
 @include md (tablet) {
     .movie_list {
         width: 70%;

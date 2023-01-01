@@ -1,9 +1,20 @@
 @import '@styles/var.scss';
 @import "@styles/mixins.scss";
 
+
 .error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 65vh;
+
+    margin-top: 5rem;
+
     p {
         color: rgb(213, 41, 41);
+        max-width: 25ch;
+
+        margin-top: .5rem;
     }
 }
 

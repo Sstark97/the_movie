@@ -69,6 +69,7 @@ const useProvideMovies = () => {
             setMovie(currentMovie as MovieDetails)
             setError("")
         } catch (e: unknown) {
+            console.log(e)
             setError(`${e}`)
         } finally {
             setLoading(false)
