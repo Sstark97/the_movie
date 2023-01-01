@@ -11,7 +11,6 @@ const MovieDetail = ({ id }: MovieDetailProps) => {
 
   const { popularity } = movie
 
-  console.log(popularity)
   return (
     <>
       { error ? <Error /> : null}

@@ -1,8 +1,8 @@
-import { useState, useCallback, useEffect, useReducer } from "react"
+import {  useReducer, useCallback, useEffect } from "react"
 import { useLocation } from "react-router-dom"
 import { API_MOST_POPULAR, API_MOVIE_DETAIL, TOTAL_PAGES } from "../const"
 import { giveMyInitialState, ActionTypes, reducer } from "@context/reducer"
-import type { FailResponse, Response, Movie } from "@customTypes/movies"
+import type { FailResponse, Response } from "@customTypes/movies"
 import type { MovieDetails } from "@customTypes/movie"
 
 /**
@@ -12,17 +12,8 @@ import type { MovieDetails } from "@customTypes/movie"
  * loading and error
  */
 const useProvideMovies = () => {
-    // const [movies, setMovies] = useState<Movie[]>([] as Movie[])
-    // const [movie, setMovie] = useState<MovieDetails>({} as MovieDetails)
-    // const [movieId, setMovideId] = useState(0)
-    // const [page, setPage] = useState(1)
-    // const [loading, setLoading] = useState<boolean>(false)
-    // const [error, setError] = useState<string>("")
-
     const [state, dispatch] = useReducer(reducer, giveMyInitialState());
-    const { page, movieId, movies } = state
-
-    console.log(movies)
+    const { page, movieId } = state
 
     /**
      * Use location to reset possible Errors
@@ -86,7 +77,7 @@ const useProvideMovies = () => {
     }
 
     const handleChangePage = (page: number) => {
-        dispatch({ type: ActionTypes.MOVIE_ID, payload: { page }})
+        dispatch({ type: ActionTypes.PAGE, payload: { page }})
     }
 
     useEffect(() => {
