@@ -17,7 +17,7 @@ interface AppState extends Pick<AppContextInterface,"movies" | "movie" | "page" 
 }
 
 type AppPayload = Partial<Pick<AppState, "movies" | "movie" | "page" | "loading" | "error" | "movieId">>
-export interface AppAction {
+interface AppAction {
     type: string,
     payload?: AppPayload
 };
@@ -28,5 +28,6 @@ interface AppReducerObject {
 export type {
     AppContextInterface,
     AppState,
+    AppAction,
     AppReducerObject
 }
