@@ -1,7 +1,7 @@
 # React Engineer - Technical Assignment
 
 ## Installation
-First of all you need an account in [TMDB](https://www.themoviedb.org/) and obtain your api key (V3). When you have it, take the **.env.example** file and rename it to **.env**, after copy your api key in *VITE_API_KEY*.
+First of all you need an account in [TMDB](https://www.themoviedb.org/) and obtain your api key (V3). When you have it, take the **.env.example** file and rename it to **.env**, after copy your api key in **VITE_API_KEY_AUTH_V3**.
 ```text=
 VITE_PORT= <any> (Ex: 3000)
 VITE_API=https://api.themoviedb.org/3/
